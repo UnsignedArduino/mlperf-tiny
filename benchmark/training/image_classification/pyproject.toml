@@ -1,0 +1,21 @@
+[project]
+name = "image-classification"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11, <3.12"
+dependencies = [
+    "h5py~=3.16.0",
+    "matplotlib~=3.11.1",
+    "numpy~=1.26.4",
+    "scikit-learn~=1.9.0",
+    "tensorflow~=2.14.1",
+    "tensorflow-addons~=0.23.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false

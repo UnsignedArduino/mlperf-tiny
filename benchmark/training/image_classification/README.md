@@ -13,11 +13,13 @@ Dataset: Cifar10
 Run the following commands to go through the whole training and validation process
 
 ``` Bash
-# Prepare Python venv (TF2.14, Python 3.11 and pip 26 required)
-./prepare_training_env.sh
+uv sync
 
-# Download training, train model, test the model
+# Download and prep training data
 ./download_cifar10_train_resnet.sh
+
+# train and test the model
+./train.sh
 
 # Convert the model to TFlite, and test conversion quality
 ./convert_to_tflite.sh
@@ -31,4 +33,3 @@ These samples are stored in the __/perf_samples__ folder.
 Associated to the performance samples is the __y_labels.csv__ ground truth file: the first item of each row is the name of the sample, the second item of each row is the total number of classes (10) and the third item is the target class.
 
 Please, use this performance evaluation test set to evaluate performances of the system to be tested.
-
