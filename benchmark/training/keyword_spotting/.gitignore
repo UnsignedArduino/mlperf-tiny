@@ -7,3 +7,6 @@ Untitled*
 aww_model.tflite
 .ipynb_checkpoints/
 plots/
+kws_model.h5
+kws_model.tflite
+kws_model_float32.tflite
