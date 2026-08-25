@@ -55,6 +55,7 @@ def main(argv):
       color_mode='rgb')
   print(train_generator.class_indices)
 
+  # model = train_epochs(model, train_generator, val_generator, 1, 0.001)
   model = train_epochs(model, train_generator, val_generator, 20, 0.001)
   model = train_epochs(model, train_generator, val_generator, 10, 0.0005)
   model = train_epochs(model, train_generator, val_generator, 20, 0.00025)
