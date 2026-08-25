@@ -23,6 +23,8 @@ for closed submissions. Please refer to the README in the `trained_models` folde
 To go through the whole training and validation process, instead, run the following commands:
 
 ``` Bash
+uv sync
+
 # Download training data from Zenodo
 ./get_dataset.sh
 
