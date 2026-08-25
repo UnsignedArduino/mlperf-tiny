@@ -111,7 +111,10 @@ def list_to_vector_array(file_list,
                                                 hop_length=hop_length,
                                                 power=power)
         if idx == 0:
-            dataset = numpy.zeros((vector_array.shape[0] * len(file_list), dims), float)
+            # dataset = numpy.zeros((vector_array.shape[0] * len(file_list), dims), float)
+            # tf/keras cast to float32, so default of float64 is mem waste
+            dataset = numpy.zeros((vector_array.shape[0] * len(file_list), dims),
+                                  numpy.float32)
         dataset[vector_array.shape[0] * idx: vector_array.shape[0] * (idx + 1), :] = vector_array
 
     return dataset
@@ -210,4 +213,10 @@ if __name__ == "__main__":
         visualizer.save_figure(history_img)
         model.save(model_file_path)
         com.logger.info("save_model -> {}".format(model_file_path))
+
+        # release this iteration's model/graph before the next one to save mem
+        from tensorflow.keras import backend as K
+        K.clear_session()
+        del model, train_data, history
+
         print("============== END TRAINING ==============")

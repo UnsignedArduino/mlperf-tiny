@@ -26,9 +26,6 @@ To go through the whole training and validation process, instead, run the follow
 # Download training data from Zenodo
 ./get_dataset.sh
 
-# Prepare Python venv (Python 3.6+ required)
-./prepare_training_env.sh
-
 # Train and test the model
 ./train.sh
 
@@ -236,4 +233,3 @@ In addition, we checked performing on **Ubuntu 16.04 LTS**, **18.04 LTS**, **Cen
 ### Python packages
 
 For an up to date list, please refer to `requirements.txt`
-

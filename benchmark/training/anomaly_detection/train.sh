@@ -1,5 +1,4 @@
 #!/bin/sh
 
-. venv/bin/activate
-python 00_train.py --dev
-python 01_test.py --dev
+uv run 00_train.py --dev
+uv run 01_test.py --dev

@@ -7,10 +7,10 @@ URL2="https://zenodo.org/record/3727685/files/eval_data_train_ToyCar.zip?downloa
 
 mkdir -p dev_data
 
-curl $URL1 -o $ZIPFILE || wget $URL1 -O $ZIPFILE
+wget $URL1 -O $ZIPFILE
 unzip $ZIPFILE -d dev_data
 rm $ZIPFILE
 
-curl $URL2 -o $ZIPFILE || wget $URL2 -O $ZIPFILE
+wget $URL2 -O $ZIPFILE
 unzip $ZIPFILE -d dev_data
 rm $ZIPFILE
